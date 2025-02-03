@@ -1,0 +1,1 @@
+pyinstaller --onefile --clean --noconfirm mainf.py --name "betav1.exe" -i icon.ico --hidden-import ctypes --hidden-import os --hidden-import requests --hidden-import tqdm --hidden-import json --hidden-import plyer --hidden-import listing
