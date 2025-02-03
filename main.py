@@ -116,9 +116,10 @@ def main():
                 
                 trueorfalse = downloadFile(versiondata[2], versiondata[3], f"{txtwb} [{versiondata[0]}] {versiondata[1]}")
 
+                ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(), 0)  # hide cmd
                 win11toast.toast(
                     title='qRepack',
-                    body=f'Файл "{txtwb} [{versiondata[0]}]" уже был загружен!' if trueorfalse else f'Загрузка "{txtwb} [{versiondata[0]}]" успешно завершена!',
+                    body=f'Загрузка "{txtwb} [{versiondata[0]}]" успешно завершена!' if trueorfalse else f'Файл "{txtwb} [{versiondata[0]}]" уже был загружен!',
                     duration='short',
                     button={
                         'activationType': 'protocol',
